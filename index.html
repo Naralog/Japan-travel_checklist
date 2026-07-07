@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일본 여행 준비물 체크리스트 | 나라로그</title>
+<meta name="description" content="오사카·도쿄·후쿠오카·삿포로 내돈내산 여행자가 정리한 일본 여행 준비물 체크리스트. 직접 체크하며 짐을 챙겨보세요.">
+
+<!-- Google Analytics (GA4) — 아래 G-XXXXXXXXXX 두 곳을 본인 측정 ID로 교체하세요 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --blue:#3E7A80; --blue-dk:#315F64; --terra:#CE7A50;
+    --cream:#FBF6EE; --card:#FFFFFF; --ink:#33454A;
+    --muted:#8C8578; --line:#E9E0D2; --band:#F4EBDD;
+    --check:#83ABAE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Pretendard',system-ui,-apple-system,'Malgun Gothic',sans-serif;
+    background:var(--cream); color:var(--ink);
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 18px}
+
+  /* hero */
+  header.hero{
+    background:var(--blue); color:#fff;
+    padding:44px 18px 40px; text-align:center;
+    border-bottom:4px solid var(--terra);
+  }
+  .hero .kicker{
+    font-size:12px; letter-spacing:3px; opacity:.85; font-weight:600;
+    text-transform:uppercase; margin-bottom:12px;
+  }
+  .hero h1{
+    font-family:'Nanum Myeongjo',serif; font-weight:800;
+    font-size:clamp(26px,6vw,40px); letter-spacing:1px; line-height:1.25;
+  }
+  .hero p{margin-top:12px;font-size:14px;opacity:.9}
+
+  /* sticky progress */
+  .progress-bar{
+    position:sticky; top:0; z-index:20;
+    background:rgba(250,247,242,.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .progress-inner{
+    display:flex; align-items:center; gap:14px;
+    padding:12px 18px; max-width:960px; margin:0 auto;
+  }
+  .track{flex:1;height:9px;background:var(--band);border-radius:99px;overflow:hidden}
+  .fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--terra));
+    border-radius:99px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+  .count{font-size:13px;font-weight:600;color:var(--blue-dk);white-space:nowrap;
+    font-variant-numeric:tabular-nums}
+  .count b{color:var(--terra)}
+
+  /* controls */
+  .controls{display:flex;gap:10px;justify-content:flex-end;
+    padding:16px 0 4px;flex-wrap:wrap}
+  .btn{
+    font-family:inherit;font-size:12.5px;font-weight:600;color:var(--blue-dk);
+    background:var(--card);border:1px solid var(--line);border-radius:99px;
+    padding:8px 16px;cursor:pointer;transition:.15s;
+  }
+  .btn:hover{background:var(--band)}
+  .btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  /* grid + cards */
+  .grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    padding:12px 0 8px;align-items:start;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px 18px;
+  }
+  .card h2{
+    font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:16px;
+    color:var(--terra);padding-bottom:10px;margin-bottom:8px;
+    border-bottom:1.5px solid var(--band);
+    display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .card h2 .n{font-family:'Pretendard',sans-serif;font-size:11px;color:var(--muted);font-weight:500}
+
+  ul{list-style:none}
+  li{margin:1px 0}
+  label.item{
+    display:flex;align-items:flex-start;gap:10px;
+    padding:6px 6px;border-radius:8px;cursor:pointer;
+    font-size:14px;transition:background .12s;
+  }
+  label.item:hover{background:var(--band)}
+  input[type=checkbox]{position:absolute;opacity:0;width:0;height:0}
+  .box{
+    flex:0 0 auto;width:18px;height:18px;margin-top:1px;
+    border:1.8px solid var(--check);border-radius:5px;background:#FBFCFD;
+    display:flex;align-items:center;justify-content:center;transition:.15s;
+  }
+  .box svg{width:11px;height:11px;stroke:#fff;stroke-width:3;
+    fill:none;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:18;stroke-dashoffset:18;transition:stroke-dashoffset .2s}
+  .txt{transition:.15s}
+  input:checked ~ .box{background:var(--blue);border-color:var(--blue)}
+  input:checked ~ .box svg{stroke-dashoffset:0}
+  input:checked ~ .txt{color:var(--muted);text-decoration:line-through;
+    text-decoration-color:var(--check)}
+  input:focus-visible ~ .box{outline:2px solid var(--blue);outline-offset:2px}
+
+  body.remaining input:checked ~ .txt{}       /* keep for clarity */
+  body.remaining li.done{display:none}
+
+  /* done banner */
+  .done-banner{
+    display:none;text-align:center;background:var(--blue);color:#fff;
+    border-radius:14px;padding:20px;margin:14px 0 4px;
+  }
+  .done-banner.show{display:block;animation:pop .4s ease}
+  .done-banner strong{font-family:'Nanum Myeongjo',serif;font-size:18px}
+  .done-banner span{display:block;font-size:13px;opacity:.9;margin-top:4px}
+  @keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
+
+  footer{
+    background:var(--band);border-top:1px solid var(--line);
+    margin-top:28px;padding:22px 18px;text-align:center;
+  }
+  footer .tip{font-size:12.5px;color:var(--terra);margin-bottom:6px}
+  footer .brand{font-family:'Nanum Myeongjo',serif;font-weight:700;
+    color:var(--blue-dk);font-size:14px;letter-spacing:1px}
+  footer .sub{font-size:11px;color:var(--muted);margin-top:3px}
+
+  @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>일본 여행 준비물 체크리스트</h1>
+</header>
+
+<div class="progress-bar">
+  <div class="progress-inner">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="count" id="count">0 / 0 준비 완료</div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="controls">
+    <button class="btn" id="toggleRemaining">남은 것만 보기</button>
+    <button class="btn" id="reset">전체 초기화</button>
+  </div>
+
+  <div class="done-banner" id="doneBanner">
+    <strong>짐 다 쌌어요, 이제 출발!</strong>
+    <span>빠뜨린 것 없이 완벽하게 준비됐어요. 즐거운 일본 여행 되세요.</span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <div class="tip">TIP. 출발 전날 이 목록대로 체크하면 빠뜨리는 물건이 확 줄어요.</div>
+  <div class="brand">나라로그 · Naralog</div>
+  <div class="sub">체크 상태는 이 기기에 자동 저장돼요.</div>
+</footer>
+
+<script>
+const DATA = [
+  ["입국 준비물", ["여권","항공권 (e-티켓)","비짓재팬 등록","숙소 예약 확인서","투어 · 교통 바우처"]],
+  ["금융 · 결제", ["트래블월렛 카드","엔화 현금","신용 / 체크카드","동전지갑"]],
+  ["캐리어 · 가방", ["캐리어 (24인치 이상)","접이식 보조가방","크로스백 / 백팩"]],
+  ["의류 · 잡화", ["사진용 코디","편한 옷 / 신발","속옷 · 양말 · 잠옷","모자 · 선글라스"]],
+  ["세면 · 세안", ["샴푸 · 린스","바디워시 · 로션","폼클렌징","칫솔 · 치약","스킨 · 로션","썬크림","기초 · 색조 화장품","면봉 · 화장솜"]],
+  ["전자기기 · 충전", ["휴대폰 충전기","보조배터리","멀티어댑터 (돼지코)","이어폰 / 에어팟","셀카봉 / 삼각대","eSIM / 유심"]],
+  ["여행 편의용품", ["여행용 전기포트","고데기","다이슨 (헤어)"]],
+  ["상비약", ["종합감기약","소화제","진통제 (타이레놀)","멀미약","반창고 / 밴드","여성 위생용품"]],
+  ["기타", ["휴지 / 물티슈","우산 / 우비","핫팩","지퍼백"]],
+];
+
+const KEY = "naralog_japan_checklist_v1";
+const CHECK_SVG = '<svg viewBox="0 0 12 12"><polyline points="1.5,6.5 4.5,9.5 10.5,2.5"/></svg>';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ saved = {}; }
+
+const grid = document.getElementById("grid");
+let total = 0;
+DATA.forEach((cat, ci) => {
+  const [name, items] = cat;
+  total += items.length;
+  const card = document.createElement("section");
+  card.className = "card";
+  const lis = items.map((it, ii) => {
+    const id = `c${ci}_${ii}`;
+    const on = saved[id] ? "checked" : "";
+    return `<li data-id="${id}" class="${saved[id]?'done':''}">
+      <label class="item">
+        <input type="checkbox" data-id="${id}" data-cat="${name}" data-item="${it}" ${on}>
+        <span class="box">${CHECK_SVG}</span>
+        <span class="txt">${it}</span>
+      </label></li>`;
+  }).join("");
+  card.innerHTML = `<h2>${name}<span class="n">${items.length}</span></h2><ul>${lis}</ul>`;
+  grid.appendChild(card);
+});
+
+const fill = document.getElementById("fill");
+const count = document.getElementById("count");
+const banner = document.getElementById("doneBanner");
+
+// GA4 helper — no-op if analytics is blocked or not yet loaded
+function track(name, params){
+  try { if (typeof gtag === "function") gtag("event", name, params || {}); } catch(e){}
+}
+
+let wasComplete = false;
+function render(){
+  const checked = Object.values(saved).filter(Boolean).length;
+  const pct = total ? Math.round(checked/total*100) : 0;
+  fill.style.width = pct + "%";
+  count.innerHTML = `<b>${checked}</b> / ${total} 준비 완료 · ${pct}%`;
+  const complete = checked === total && total > 0;
+  banner.classList.toggle("show", complete);
+  if (complete && !wasComplete) track("complete_checklist", {total_items: total});
+  wasComplete = complete;
+}
+
+grid.addEventListener("change", e => {
+  const cb = e.target;
+  if (cb.type !== "checkbox") return;
+  const id = cb.dataset.id;
+  saved[id] = cb.checked;
+  cb.closest("li").classList.toggle("done", cb.checked);
+  try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+  track(cb.checked ? "check_item" : "uncheck_item", {
+    item_category: cb.dataset.cat,
+    item_name: cb.dataset.item
+  });
+  render();
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  track("reset_checklist");
+  saved = {};
+  try { localStorage.removeItem(KEY); } catch(e){}
+  document.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+  document.querySelectorAll("li").forEach(li => li.classList.remove("done"));
+  render();
+});
+
+const toggleBtn = document.getElementById("toggleRemaining");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("remaining");
+  const on = document.body.classList.contains("remaining");
+  toggleBtn.classList.toggle("active", on);
+  toggleBtn.textContent = on ? "전체 보기" : "남은 것만 보기";
+  track("toggle_remaining", {enabled: on});
+});
+
+render();
+</script>
+</body>
+</html>
