@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>일본 여행 준비물 체크리스트 | 나라로그</title>
 <meta name="description" content="오사카·도쿄·후쿠오카·삿포로 내돈내산 여행자가 정리한 일본 여행 준비물 체크리스트. 직접 체크하며 짐을 챙겨보세요.">
-
-<!-- Google Analytics (GA4) — 아래 G-XXXXXXXXXX 두 곳을 본인 측정 ID로 교체하세요 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+ 
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-434DXDRW0G"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-434DXDRW0G');
 </script>
-
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
     line-height:1.5; -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:960px;margin:0 auto;padding:0 18px}
-
+ 
   /* hero */
   header.hero{
     background:var(--blue); color:#fff;
@@ -50,7 +50,7 @@
     font-size:clamp(26px,6vw,40px); letter-spacing:1px; line-height:1.25;
   }
   .hero p{margin-top:12px;font-size:14px;opacity:.9}
-
+ 
   /* sticky progress */
   .progress-bar{
     position:sticky; top:0; z-index:20;
@@ -67,7 +67,7 @@
   .count{font-size:13px;font-weight:600;color:var(--blue-dk);white-space:nowrap;
     font-variant-numeric:tabular-nums}
   .count b{color:var(--terra)}
-
+ 
   /* controls */
   .controls{display:flex;gap:10px;justify-content:flex-end;
     padding:16px 0 4px;flex-wrap:wrap}
@@ -79,7 +79,7 @@
   .btn:hover{background:var(--band)}
   .btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
   .btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-
+ 
   /* grid + cards */
   .grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
@@ -96,7 +96,7 @@
     display:flex;justify-content:space-between;align-items:baseline;
   }
   .card h2 .n{font-family:'Pretendard',sans-serif;font-size:11px;color:var(--muted);font-weight:500}
-
+ 
   ul{list-style:none}
   li{margin:1px 0}
   label.item{
@@ -120,10 +120,10 @@
   input:checked ~ .txt{color:var(--muted);text-decoration:line-through;
     text-decoration-color:var(--check)}
   input:focus-visible ~ .box{outline:2px solid var(--blue);outline-offset:2px}
-
+ 
   body.remaining input:checked ~ .txt{}       /* keep for clarity */
   body.remaining li.done{display:none}
-
+ 
   /* done banner */
   .done-banner{
     display:none;text-align:center;background:var(--blue);color:#fff;
@@ -133,7 +133,7 @@
   .done-banner strong{font-family:'Nanum Myeongjo',serif;font-size:18px}
   .done-banner span{display:block;font-size:13px;opacity:.9;margin-top:4px}
   @keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
-
+ 
   footer{
     background:var(--band);border-top:1px solid var(--line);
     margin-top:28px;padding:22px 18px;text-align:center;
@@ -142,45 +142,45 @@
   footer .brand{font-family:'Nanum Myeongjo',serif;font-weight:700;
     color:var(--blue-dk);font-size:14px;letter-spacing:1px}
   footer .sub{font-size:11px;color:var(--muted);margin-top:3px}
-
+ 
   @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.grid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-
+ 
 <header class="hero">
   <h1>일본 여행 준비물 체크리스트</h1>
 </header>
-
+ 
 <div class="progress-bar">
   <div class="progress-inner">
     <div class="track"><div class="fill" id="fill"></div></div>
     <div class="count" id="count">0 / 0 준비 완료</div>
   </div>
 </div>
-
+ 
 <main class="wrap">
   <div class="controls">
     <button class="btn" id="toggleRemaining">남은 것만 보기</button>
     <button class="btn" id="reset">전체 초기화</button>
   </div>
-
+ 
   <div class="done-banner" id="doneBanner">
     <strong>짐 다 쌌어요, 이제 출발!</strong>
     <span>빠뜨린 것 없이 완벽하게 준비됐어요. 즐거운 일본 여행 되세요.</span>
   </div>
-
+ 
   <div class="grid" id="grid"></div>
 </main>
-
+ 
 <footer>
   <div class="tip">TIP. 출발 전날 이 목록대로 체크하면 빠뜨리는 물건이 확 줄어요.</div>
   <div class="brand">나라로그 · Naralog</div>
   <div class="sub">체크 상태는 이 기기에 자동 저장돼요.</div>
 </footer>
-
+ 
 <script>
 const DATA = [
   ["입국 준비물", ["여권","항공권 (e-티켓)","비짓재팬 등록","숙소 예약 확인서","투어 · 교통 바우처"]],
@@ -193,12 +193,12 @@ const DATA = [
   ["상비약", ["종합감기약","소화제","진통제 (타이레놀)","멀미약","반창고 / 밴드","여성 위생용품"]],
   ["기타", ["휴지 / 물티슈","우산 / 우비","핫팩","지퍼백"]],
 ];
-
+ 
 const KEY = "naralog_japan_checklist_v1";
 const CHECK_SVG = '<svg viewBox="0 0 12 12"><polyline points="1.5,6.5 4.5,9.5 10.5,2.5"/></svg>';
 let saved = {};
 try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ saved = {}; }
-
+ 
 const grid = document.getElementById("grid");
 let total = 0;
 DATA.forEach((cat, ci) => {
@@ -219,16 +219,16 @@ DATA.forEach((cat, ci) => {
   card.innerHTML = `<h2>${name}<span class="n">${items.length}</span></h2><ul>${lis}</ul>`;
   grid.appendChild(card);
 });
-
+ 
 const fill = document.getElementById("fill");
 const count = document.getElementById("count");
 const banner = document.getElementById("doneBanner");
-
+ 
 // GA4 helper — no-op if analytics is blocked or not yet loaded
 function track(name, params){
   try { if (typeof gtag === "function") gtag("event", name, params || {}); } catch(e){}
 }
-
+ 
 let wasComplete = false;
 function render(){
   const checked = Object.values(saved).filter(Boolean).length;
@@ -240,7 +240,7 @@ function render(){
   if (complete && !wasComplete) track("complete_checklist", {total_items: total});
   wasComplete = complete;
 }
-
+ 
 grid.addEventListener("change", e => {
   const cb = e.target;
   if (cb.type !== "checkbox") return;
@@ -254,7 +254,7 @@ grid.addEventListener("change", e => {
   });
   render();
 });
-
+ 
 document.getElementById("reset").addEventListener("click", () => {
   track("reset_checklist");
   saved = {};
@@ -263,7 +263,7 @@ document.getElementById("reset").addEventListener("click", () => {
   document.querySelectorAll("li").forEach(li => li.classList.remove("done"));
   render();
 });
-
+ 
 const toggleBtn = document.getElementById("toggleRemaining");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("remaining");
@@ -272,8 +272,9 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = on ? "전체 보기" : "남은 것만 보기";
   track("toggle_remaining", {enabled: on});
 });
-
+ 
 render();
 </script>
 </body>
 </html>
+ 
